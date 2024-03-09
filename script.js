@@ -19,7 +19,24 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             return;
         }
         // Simulate incorrect login
-        alert('Wrong username or password. Please try again.');
+        const message = document.createElement('div');
+        message.innerText = 'Wrong username or password. Please try again.';
+        message.style.position = 'fixed';
+        message.style.top = '50%';
+        message.style.left = '50%';
+        message.style.transform = 'translate(-50%, -50%)';
+        message.style.backgroundColor = '#fff';
+        message.style.padding = '10px';
+        message.style.border = '2px solid #f00';
+        message.style.borderRadius = '5px';
+        message.style.zIndex = '9999';
+        document.body.appendChild(message);
+
+        // Automatically close the popup after 3 seconds
+        setTimeout(() => {
+            document.body.removeChild(message);
+        }, 3000);
+
         // Clear the password field
         document.getElementById('password').value = '';
     } else {
