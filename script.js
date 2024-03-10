@@ -32,10 +32,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         message.style.zIndex = '9999';
         document.body.appendChild(message);
 
-        // Automatically close the popup after 3 seconds
+        // Automatically close the popup after 1 seconds
         setTimeout(() => {
             document.body.removeChild(message);
-        }, 3000);
+        }, 1000);
 
         // Clear the password field
         document.getElementById('password').value = '';
