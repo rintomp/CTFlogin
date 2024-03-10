@@ -1,5 +1,5 @@
 let attempts = 0;
-const maxAttempts = 20; // Maximum number of attempts
+const maxAttempts = 30; // Maximum number of attempts
 const windowDuration = 30000; // 30 seconds in milliseconds
 
 setInterval(() => {
@@ -36,9 +36,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         setTimeout(() => {
             document.body.removeChild(message);
         }, 1000);
-
-        // Clear the password field
-        document.getElementById('password').value = '';
     } else {
         alert('Please enter both username and password.');
     }
