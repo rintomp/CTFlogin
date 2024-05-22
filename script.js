@@ -1,9 +1,8 @@
 let attempts = 0;
-const maxAttempts = 30; // Maximum number of attempts
-const windowDuration = 30000; // 30 seconds in milliseconds
-
+const maxAttempts = 30; 
+const windowDuration = 30000; 
 setInterval(() => {
-    attempts = 0; // Reset attempts count every 30 seconds
+    attempts = 0; 
 }, windowDuration);
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -13,12 +12,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     attempts++;
 
     if (username && password) {
-        // Check for brute force attack (exceeding number of attempts within 30 seconds)
+       
         if (attempts > maxAttempts) {
-            window.location.href = 'bruteforce_detected.html'; // Redirect to brute force detected page
+            window.location.href = 'bruteforce_detected.html'; 
             return;
         }
-        // Simulate incorrect login
+        
         const message = document.createElement('div');
         message.innerText = 'Wrong username or password. Please try again.';
         message.style.position = 'fixed';
@@ -32,7 +31,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         message.style.zIndex = '9999';
         document.body.appendChild(message);
 
-        // Automatically close the popup after 1 seconds
+        
         setTimeout(() => {
             document.body.removeChild(message);
         }, 1000);
